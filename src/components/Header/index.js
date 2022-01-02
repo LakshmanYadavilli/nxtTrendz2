@@ -4,7 +4,7 @@ import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 class Header extends Component {
-  clicked = () => {
+  onClickLogout = () => {
     const {history} = this.props
     Cookies.remove('jwt_token')
     history.replace('/login')
@@ -52,7 +52,7 @@ class Header extends Component {
             <button
               type="button"
               className="logout-desktop-btn"
-              onClick={this.clicked}
+              onClick={this.onClickLogout}
             >
               Logout
             </button>
